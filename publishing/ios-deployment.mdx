@@ -1,0 +1,57 @@
+---
+title: "iOS Deployment"
+description: "Build and submit your app to the App Store"
+---
+
+## Prerequisites
+
+- [Expo account connected](/publishing/expo-connection)
+- [GitHub account connected](/integrations/github-integration)
+- [Apple Developer Program](https://developer.apple.com/programs/) membership ($99/year)
+
+## Building for iOS
+
+1. Click **Deploy** in the Fastshot editor
+2. Select **iOS**
+3. Confirm your Expo token and Apple Developer account are connected
+4. Click **Start Build**
+
+Expo handles the entire build process:
+
+- Pulls code from GitHub
+- Creates and manages signing certificates
+- Builds the IPA binary
+- Submits to App Store Connect
+
+## Publishing to the App Store
+
+1. **Open App Store Connect** at [appstoreconnect.apple.com](https://appstoreconnect.apple.com)
+2. **Find your build** — it should appear automatically after Expo submits it
+3. **Complete the app listing:**
+   - App name and subtitle
+   - Description and keywords
+   - Screenshots for each device size (iPhone, iPad if applicable)
+   - App icon (1024x1024)
+   - Privacy policy URL
+   - Age rating
+   - App category
+4. **Submit for App Review**
+
+<Warning>
+  Apple's review process typically takes 1-2 days. Make sure your app follows the [App Store Review Guidelines](https://developer.apple.com/app-store/review/guidelines/).
+</Warning>
+
+## App Store requirements
+
+- Your app must have a clear purpose and function as described
+- All features shown in screenshots must work
+- A privacy policy is required
+- Apps that collect user data must explain what data is collected and why
+- No placeholder content or lorem ipsum text
+
+## Troubleshooting
+
+- **Build fails** — check the Expo build dashboard for error logs; common issues include expired certificates or provisioning profiles
+- **Rejected by App Review** — read the rejection reason carefully; common causes include crashes, broken features, or guideline violations
+- **Certificate issues** — Expo manages certificates automatically; if problems occur, regenerate the access token
+- **Missing metadata** — App Store Connect highlights required fields that are incomplete

@@ -1,0 +1,57 @@
+---
+title: "Asset Management"
+description: "Generate and manage images, icons, and logos"
+---
+
+## AI-generated assets
+
+Fastshot can generate images from text descriptions. Ask in the chat:
+
+- "Generate an app icon with a blue gradient and a rocket"
+- "Create a logo for a fitness app called FitTrack"
+- "Make an illustration of a person meditating"
+
+Supported asset types:
+
+| Type | Description |
+|------|-------------|
+| App icon | Home screen icon for iOS and Android |
+| Logo | Brand logo for use inside the app |
+| Icon | UI icons at various sizes |
+| Illustration | Decorative images and graphics |
+| Background | Full-screen background images |
+| Photo | Realistic photo-style images |
+
+Generation takes 10-30 seconds per image.
+
+## Uploading your own assets
+
+You can upload images directly:
+
+1. Open the assets panel in the editor
+2. Click the upload button
+3. Select files from your device
+4. Images are added to your project's `assets/` folder
+
+**Limits:**
+- Maximum 20 files per project
+- Standard image formats supported (PNG, JPG, SVG)
+
+## Using assets in your app
+
+Once an asset is in your project, tell the AI how to use it:
+
+- "Use the uploaded logo as the header image"
+- "Set the new icon as the app icon"
+- "Use this background image on the login screen"
+
+The AI updates your code to reference the asset from the `assets/images/` directory.
+
+## Splash screen and app icon
+
+To update your app's splash screen or home screen icon:
+
+- "Change the splash screen background to dark blue"
+- "Update the app icon to the one I just uploaded"
+
+These changes update `app.json` and take effect on the next build.

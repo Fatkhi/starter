@@ -1,0 +1,55 @@
+---
+title: "Android Deployment"
+description: "Build and publish your app to Google Play"
+---
+
+## Prerequisites
+
+- [Expo account connected](/publishing/expo-connection)
+- [GitHub account connected](/integrations/github-integration)
+- [Google Play Console](https://play.google.com/console) account ($25 one-time fee)
+
+## Building for Android
+
+1. Click **Deploy** in the Fastshot editor
+2. Select **Android**
+3. Choose a build type:
+   - **Preview** — for internal testing
+   - **Production** — for Google Play submission
+4. Click **Start Build**
+
+The build takes approximately 3-4 minutes. When complete, you'll get a download link for the APK file.
+
+## Publishing to Google Play
+
+1. **Download the APK** from the Expo build dashboard
+2. **Open Google Play Console** and create a new app
+3. **Upload the APK** to the appropriate track:
+   - Internal testing — for your team
+   - Closed testing — for invited testers
+   - Open testing — for public beta
+   - Production — for public release
+4. **Complete the store listing:**
+   - App name and description
+   - Screenshots (phone and tablet)
+   - Feature graphic
+   - Privacy policy URL
+   - Content rating questionnaire
+5. **Submit for review**
+
+<Tip>
+  Start with internal testing to verify everything works before submitting to production.
+</Tip>
+
+## Store listing tips
+
+- Use clear, descriptive screenshots that show your app's key features
+- Write a concise description focusing on what users can do with the app
+- Include a privacy policy (required by Google Play)
+- Complete the content rating questionnaire accurately
+
+## Troubleshooting
+
+- **Build fails** — check the Expo build dashboard for error logs
+- **APK not installing** — ensure "Install from unknown sources" is enabled on the test device
+- **Missing app icon** — verify the app icon is set in [App Configuration](/working/app-config) before building

@@ -1,0 +1,57 @@
+---
+title: "GitHub Integration"
+description: "Connect GitHub to manage your app's source code"
+---
+
+## Why connect GitHub
+
+GitHub integration is required for deploying your app to the App Store or Google Play. It also gives you:
+
+- Full source code in your own repository
+- Version history of all changes
+- Ability to clone and develop independently
+
+## Connecting GitHub
+
+1. Click **Deploy** in the editor
+2. Choose Android or iOS deployment
+3. Authorize Fastshot to access your GitHub account
+4. A repository is created automatically for your app
+
+<Tip>
+  GitHub connection happens as part of the deployment flow. You don't need to set it up separately.
+</Tip>
+
+## What gets synced
+
+- All app source code (components, screens, navigation, styles)
+- Configuration files (`app.json`, `package.json`, etc.)
+- Assets (icons, images, fonts)
+- Expo build configuration
+
+Code is pushed to GitHub automatically when you deploy. Each deployment creates a new commit with your latest changes.
+
+## Using the source code
+
+Once your code is on GitHub, you can:
+
+- **Clone the repo** — work on the code locally with your own editor
+- **Deploy independently** — use Expo CLI or EAS Build directly
+- **Collaborate** — invite other developers to the repository
+- **Customize further** — make changes that go beyond what the AI can do
+
+The generated code uses standard React Native + Expo patterns, so any developer familiar with the stack can work with it.
+
+## Repository structure
+
+Your GitHub repository mirrors the project structure:
+
+```
+app.json              # App configuration
+App.tsx               # Root component
+app/                  # Screens (Expo Router)
+store/                # State management
+constants/            # Theme and design tokens
+assets/               # Images, icons, fonts
+package.json          # Dependencies
+```

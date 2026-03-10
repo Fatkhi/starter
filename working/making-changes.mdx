@@ -1,0 +1,69 @@
+---
+title: "Making Changes"
+description: "Iterate on your app with follow-up messages"
+---
+
+## How iteration works
+
+Send a follow-up message describing what you want to change. The AI makes targeted code updates — it doesn't rebuild from scratch.
+
+Each change follows this cycle:
+
+1. You describe the change
+2. AI modifies the relevant code
+3. App rebuilds automatically
+4. Preview updates with your changes
+5. A version checkpoint is saved
+
+## Types of changes
+
+**Design changes**
+- "Change the background color to dark gray"
+- "Make the cards have rounded corners and a subtle shadow"
+- "Use a larger font for the page title"
+
+**Feature additions**
+- "Add a settings screen with a dark mode toggle"
+- "Add pull-to-refresh to the home screen"
+- "Add a search bar that filters the list"
+
+**Screen additions**
+- "Add a profile page that shows the user's name and email"
+- "Add an onboarding flow with 3 intro slides"
+
+**Bug fixes**
+- "The save button doesn't do anything when tapped"
+- "Items overlap on smaller screens"
+- "The back button goes to the wrong screen"
+
+**Configuration**
+- "Change the app name to FitTracker"
+- "Update the app icon"
+
+## Tips for effective iteration
+
+<CardGroup cols={2}>
+  <Card title="One change at a time" icon="1">
+    Focused messages produce better results than bundling multiple changes together.
+  </Card>
+  <Card title="Be specific" icon="crosshairs">
+    "Make the header 60px tall with white text" is better than "fix the header."
+  </Card>
+  <Card title="Reference screens" icon="mobile-screen">
+    "On the home screen, move the search bar above the list" tells the AI exactly where to look.
+  </Card>
+  <Card title="Describe the problem" icon="bug">
+    For bugs, describe what happens vs. what you expected. The AI will diagnose and fix it.
+  </Card>
+</CardGroup>
+
+## Version history
+
+Every change creates a version checkpoint. You can:
+
+- **Browse history** — see what changed at each step
+- **Roll back** — revert to a previous version if a change didn't work out
+
+<Tip>
+  If a change goes wrong, you can always roll back. Don't hesitate to experiment.
+</Tip>

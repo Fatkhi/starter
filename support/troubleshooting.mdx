@@ -1,0 +1,108 @@
+---
+title: "Troubleshooting"
+description: "Solutions for common issues"
+---
+
+## Preview issues
+
+<AccordionGroup>
+  <Accordion title="Preview not loading">
+    1. Click the **Restart Metro** button in the preview panel
+    2. If that doesn't help, ask the AI: "restart the preview with cache reset"
+    3. Check that your browser allows the preview iframe to load
+
+    The preview may take a moment to compile after changes are made. Look for the build state indicator.
+  </Accordion>
+
+  <Accordion title="Preview shows errors">
+    Runtime errors display with a count badge in the preview panel.
+
+    - Click **Fix All Errors** to let the AI diagnose and fix them automatically
+    - Or describe the error to the AI: "I'm seeing an error on the home screen"
+
+    The AI can read Metro logs to identify the root cause.
+  </Accordion>
+
+  <Accordion title="App looks different on phone vs browser">
+    This is expected. The browser preview uses React Native's web renderer, which approximates but doesn't perfectly match native rendering.
+
+    Native differences include:
+    - Navigation bars and tab bars
+    - Modal presentations
+    - Date and time pickers
+    - Platform-specific animations
+    - Shadows and elevation
+
+    Always test on a physical device with Expo Go for the accurate experience.
+  </Accordion>
+
+  <Accordion title="Camera, biometrics, or notifications don't work in preview">
+    These features require native device APIs that aren't available in the browser preview. Test them on a physical device using Expo Go.
+  </Accordion>
+</AccordionGroup>
+
+## Build and deployment issues
+
+<AccordionGroup>
+  <Accordion title="Build fails on Expo">
+    Check the [Expo build dashboard](https://expo.dev) for detailed error logs. Common causes:
+
+    - Missing or invalid app icon
+    - Invalid `app.json` configuration
+    - Expired Expo access token — regenerate in your Expo account settings
+    - iOS: expired Apple Developer certificates
+  </Accordion>
+
+  <Accordion title="Can't connect GitHub">
+    - Make sure you're logged into GitHub in your browser
+    - Check that you've authorized Fastshot to access your GitHub account
+    - Try revoking and re-granting access in GitHub Settings > Applications
+  </Accordion>
+
+  <Accordion title="Can't connect Expo">
+    - Verify your access token is valid at [expo.dev](https://expo.dev) under Account > Access Tokens
+    - Create a new token if the current one has expired
+    - Make sure you're pasting the full token without extra spaces
+  </Accordion>
+</AccordionGroup>
+
+## App behavior issues
+
+<AccordionGroup>
+  <Accordion title="Button or feature doesn't work">
+    Describe the issue to the AI:
+    - "The save button on the profile screen doesn't do anything"
+    - "Tapping a list item should open the detail screen but nothing happens"
+
+    The AI will check the code, identify the problem, and fix it.
+  </Accordion>
+
+  <Accordion title="Data isn't saving">
+    - If using local storage: data resets when the app is reloaded in the browser preview. Test on a physical device for persistent storage.
+    - If using Supabase: check that your Supabase project is connected and the database tables exist.
+  </Accordion>
+
+  <Accordion title="App crashes on launch">
+    Ask the AI to check for errors: "The app crashes when it opens." The AI will inspect the Metro logs and code for issues like missing imports, undefined variables, or configuration errors.
+  </Accordion>
+</AccordionGroup>
+
+## Account and credits
+
+<AccordionGroup>
+  <Accordion title="Running low on credits">
+    - Send focused, one-change-at-a-time messages (more efficient than large multi-change requests)
+    - Simple UI tweaks cost less than full feature additions
+    - Check your balance on the credits page
+  </Accordion>
+
+  <Accordion title="Can't log in">
+    - Check your email address is correct
+    - Try resetting your password
+    - Clear browser cookies and try again
+  </Accordion>
+</AccordionGroup>
+
+## Getting more help
+
+Join the [Fastshot Discord community](https://discord.com/invite/4UHnKKmj9q) to ask questions and get help from other users and the team.

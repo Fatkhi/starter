@@ -1,0 +1,54 @@
+---
+title: "Publishing Overview"
+description: "Deploy your app to the App Store and Google Play"
+---
+
+## Prerequisites
+
+Before publishing, you'll need:
+
+<CardGroup cols={2}>
+  <Card title="GitHub Account" icon="github">
+    Required for source code hosting. Connected during deployment.
+  </Card>
+  <Card title="Expo Account" icon="code">
+    Required for building native binaries. Free at [expo.dev](https://expo.dev).
+  </Card>
+  <Card title="Apple Developer Account" icon="apple">
+    Required for iOS only. $99/year at [developer.apple.com](https://developer.apple.com).
+  </Card>
+  <Card title="Google Play Console" icon="google-play">
+    Required for Android only. $25 one-time at [play.google.com/console](https://play.google.com/console).
+  </Card>
+</CardGroup>
+
+## Deployment flow
+
+1. **Connect accounts** — link GitHub and Expo to your Fastshot project
+2. **Choose platform** — select Android, iOS, or both
+3. **Build** — Fastshot triggers an Expo EAS build (3-4 minutes)
+4. **Download/submit** — get the build artifact or submit directly to the store
+5. **Publish** — complete the app store listing and submit for review
+
+## Platform guides
+
+<CardGroup cols={2}>
+  <Card title="Expo Connection" icon="plug" href="/publishing/expo-connection">
+    Set up your Expo account and access token.
+  </Card>
+  <Card title="Android Deployment" icon="android" href="/publishing/android-deployment">
+    Build an APK and publish to Google Play.
+  </Card>
+  <Card title="iOS Deployment" icon="apple" href="/publishing/ios-deployment">
+    Build and submit to the App Store.
+  </Card>
+</CardGroup>
+
+## Before you publish
+
+Make sure you've:
+
+- Tested the app on a physical device via Expo Go
+- Set the correct app name and icon in [App Configuration](/working/app-config)
+- Connected [Supabase](/integrations/supabase-backend) if your app uses a backend
+- Verified all features work as expected

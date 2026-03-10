@@ -1,0 +1,48 @@
+---
+title: "Expo Connection"
+description: "Connect your Expo account for app builds"
+---
+
+## What is Expo?
+
+[Expo](https://expo.dev) is a platform for building and deploying React Native apps. Fastshot uses Expo EAS (Expo Application Services) to create native iOS and Android builds from your project.
+
+## Setting up Expo
+
+1. **Create an account** — sign up at [expo.dev](https://expo.dev) (free)
+2. **Create an access token:**
+   - Go to your Expo account settings
+   - Navigate to **Access Tokens**
+   - Click **Create Token**
+   - Copy the token
+
+3. **Connect to Fastshot:**
+   - Click **Deploy** in the Fastshot editor
+   - Paste your Expo access token when prompted
+   - The token is stored securely and used for all future builds
+
+<Warning>
+  Keep your access token secret. Don't share it or commit it to public repositories.
+</Warning>
+
+## What Expo handles
+
+When you deploy from Fastshot, Expo:
+
+- Pulls your latest code from GitHub
+- Installs dependencies
+- Builds a native binary (APK for Android, IPA for iOS)
+- Signs the build with the appropriate certificates
+- Provides a download link or submits directly to the store
+
+## Build types
+
+| Type | Purpose | Use case |
+|------|---------|----------|
+| Development | Local testing with dev tools | Debugging on your device |
+| Preview | Internal testing | Sharing with testers before release |
+| Production | App store submission | Publishing to App Store or Google Play |
+
+## Monitoring builds
+
+After starting a build, you can track its progress on the [Expo build dashboard](https://expo.dev). Build logs are available there if anything goes wrong.

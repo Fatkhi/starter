@@ -1,0 +1,61 @@
+---
+title: "Prompting Guide"
+description: "Write better prompts for better apps"
+---
+
+## General principles
+
+The more specific your prompt, the better the result. Think of it like briefing a developer — the clearer the brief, the fewer revisions needed.
+
+## Initial prompt tips
+
+<CardGroup cols={2}>
+  <Card title="Name specific screens" icon="window-maximize">
+    "Home screen with a feed, profile page, and settings" gives the AI a clear structure to work with.
+  </Card>
+  <Card title="Describe the data" icon="database">
+    "Users can create workouts with exercises, sets, and reps" tells the AI what models to build.
+  </Card>
+  <Card title="Set design direction" icon="palette">
+    "Minimal design with soft pastels and rounded cards" is more actionable than "make it look nice."
+  </Card>
+  <Card title="Mention target users" icon="users">
+    "For college students managing study groups" helps the AI make UX decisions.
+  </Card>
+</CardGroup>
+
+## Good vs. vague prompts
+
+| Vague | Specific |
+|-------|----------|
+| Make me a food app | A recipe app where users can browse recipes by category, save favorites, and create shopping lists. Clean white design with food photography. |
+| Build a social app | A photo-sharing app for dog owners. Users can post photos, follow other users, and like/comment. Instagram-style feed with a warm color scheme. |
+| I need a business app | An expense tracker for freelancers. Log expenses by category, attach receipt photos, and view monthly summaries with charts. Dark theme. |
+
+## Follow-up prompts
+
+After the initial build, send focused follow-up messages to iterate:
+
+**Design changes:**
+- "Change the header color to dark blue"
+- "Make the cards have more rounded corners"
+- "Use a larger font size for headings"
+
+**Feature additions:**
+- "Add a settings screen with a logout button"
+- "Add pull-to-refresh on the home feed"
+- "Add a search bar at the top of the list"
+
+**Bug fixes:**
+- "The button on the profile page doesn't do anything"
+- "The list items overlap on smaller screens"
+
+<Tip>
+  Make one change at a time. "Change the header color and add a settings page" works, but you'll get better results with two separate messages.
+</Tip>
+
+## Things to avoid
+
+- **Too abstract** — "Make it more modern" (what does that mean specifically?)
+- **Too many changes at once** — keep follow-ups focused on one thing
+- **Contradictory instructions** — "Make it minimal but add lots of animations and decorations"

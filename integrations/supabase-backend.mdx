@@ -1,0 +1,69 @@
+---
+title: "Supabase Backend"
+description: "Add authentication, database, and storage to your app"
+---
+
+## What Supabase provides
+
+[Supabase](https://supabase.com) is an open-source backend platform. When connected to Fastshot, your app can use:
+
+- **Authentication** — email/password, Google, and Apple sign-in
+- **Database** — PostgreSQL with real-time subscriptions
+- **Storage** — file and image uploads with public URLs
+
+## Connecting Supabase
+
+When your app needs backend features (user accounts, saving data, file uploads), the AI will prompt you to connect Supabase. An inline connect widget appears in the chat.
+
+1. Click the connect button when prompted
+2. Authorize Fastshot to access your Supabase project
+3. The connection is established automatically
+
+<Tip>
+  If you don't need a backend yet, you can skip the Supabase prompt. The AI will use local storage as a fallback. You can always connect later.
+</Tip>
+
+## Authentication
+
+Once connected, you can add auth to your app:
+
+- "Add a login screen with email and password"
+- "Add Google sign-in"
+- "Add Apple sign-in"
+- "Add a password reset flow"
+
+The AI generates the authentication UI and connects it to Supabase Auth. Session management is handled automatically.
+
+## Database
+
+Store and retrieve data with Supabase's PostgreSQL database:
+
+- "Save user profiles to the database"
+- "Add a favorites list that persists across sessions"
+- "Show real-time updates when new items are added"
+
+The AI generates the database queries, table structures, and real-time subscription code.
+
+## Storage
+
+Upload and manage files:
+
+- "Let users upload profile photos"
+- "Add image attachments to posts"
+- "Store receipt photos with expenses"
+
+Files are uploaded to Supabase Storage buckets with proper access control policies.
+
+**Storage limits:**
+- 10 MB per file
+- Image files only (`image/*` MIME types) by default
+
+## Without Supabase
+
+If you choose not to connect Supabase, your app uses:
+
+- **AsyncStorage** for local data persistence
+- **Zustand** for in-memory state management
+- No authentication or cloud storage
+
+You can connect Supabase at any time to upgrade to cloud-based features.

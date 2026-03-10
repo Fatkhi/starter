@@ -1,0 +1,60 @@
+---
+title: "App Configuration"
+description: "Customize your app's name, icon, splash screen, and settings"
+---
+
+## What you can configure
+
+Your app's configuration is stored in `app.json`. You can update any setting through chat — no need to edit files manually.
+
+| Setting | Description | Example |
+|---------|-------------|---------|
+| App name | Display name on home screen | "Change app name to FitTrack" |
+| App icon | Home screen icon | "Update the app icon" |
+| Splash screen | Loading screen image and color | "Make splash screen background dark blue" |
+| Version | App version number | "Set version to 1.2.0" |
+| Scheme | Deep link URL scheme | "Set deep link scheme to fittrack" |
+
+## Updating configuration
+
+Tell the AI what you want to change:
+
+- "Change the app name to MyApp"
+- "Set the splash screen background color to #1a1a2e"
+- "Update the app icon to the one I uploaded"
+
+Changes apply immediately to the preview. For app store builds, the updated configuration is included automatically.
+
+## Design system
+
+Your app's design system is established during initial generation and includes:
+
+- **Color palette** — primary, secondary, accent, background, and text colors
+- **Typography** — font families, sizes, and weights
+- **Spacing** — consistent spacing scale across the app
+- **Border radius** — rounded corners for cards, buttons, and inputs
+
+To modify the design system:
+
+- "Change the primary color to indigo"
+- "Use a more rounded style for all buttons and cards"
+- "Make the body text slightly larger"
+
+## App structure
+
+Fastshot generates apps with this structure:
+
+```
+app.json              # App configuration
+App.tsx               # Root component
+app/                  # Screens (file-based routing)
+  (tabs)/
+    _layout.tsx       # Tab navigation layout
+    index.tsx         # Home screen
+    [screen].tsx      # Additional screens
+store/                # State management (Zustand)
+constants/            # Colors, typography, theme
+assets/               # Images, icons, fonts
+```
+
+Navigation uses [Expo Router](https://docs.expo.dev/router/introduction/) with file-based routing. State management uses [Zustand](https://zustand-demo.pmnd.rs/) for simplicity and performance.

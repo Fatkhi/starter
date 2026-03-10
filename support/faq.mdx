@@ -1,0 +1,92 @@
+---
+title: "FAQ"
+description: "Frequently asked questions about Fastshot"
+---
+
+## General
+
+<AccordionGroup>
+  <Accordion title="Do I need to know how to code?">
+    No. Fastshot generates production-ready code from text descriptions. You build and iterate entirely through chat.
+  </Accordion>
+
+  <Accordion title="What kind of apps can I build?">
+    Cross-platform mobile apps for iOS and Android. Common examples include social apps, productivity tools, e-commerce apps, fitness trackers, educational apps, and finance tools.
+  </Accordion>
+
+  <Accordion title="Can I build a website with Fastshot?">
+    No. Fastshot is specifically designed for mobile apps using React Native and Expo. For websites, consider other tools.
+  </Accordion>
+
+  <Accordion title="Is the generated code production-ready?">
+    Yes. Fastshot generates TypeScript React Native code with proper structure, types, navigation, and state management — ready for app store submission.
+  </Accordion>
+
+  <Accordion title="Can I export and own the source code?">
+    Yes. When you connect GitHub, your full source code is pushed to your own repository. You can clone it, modify it, and deploy it independently.
+  </Accordion>
+</AccordionGroup>
+
+## Building
+
+<AccordionGroup>
+  <Accordion title="How long does it take to generate an app?">
+    The first version takes about 5-7 minutes. Follow-up changes are faster since the AI only modifies what's needed.
+  </Accordion>
+
+  <Accordion title="Can I use my own design as a reference?">
+    Yes. Upload screenshots, mockups, or moodboard images. You can also paste a website URL for the AI to analyze and draw inspiration from.
+  </Accordion>
+
+  <Accordion title="How do credits work?">
+    Credits are based on actual AI usage (token consumption). Simple changes cost less than full app generation. Check your balance in the credits page.
+  </Accordion>
+
+  <Accordion title="Can I change the app icon and name?">
+    Yes. Tell the AI "change app name to MyApp" or upload a new icon. These settings are updated in your app configuration.
+  </Accordion>
+</AccordionGroup>
+
+## Testing
+
+<AccordionGroup>
+  <Accordion title="Can I test on my phone?">
+    Yes. Install Expo Go on your device and scan the QR code shown in the preview panel.
+  </Accordion>
+
+  <Accordion title="Why does my app look different on my phone?">
+    The browser preview is an approximation. Native components (navigation bars, modals, date pickers) render differently on real devices. Always test on a physical device for full accuracy.
+  </Accordion>
+
+  <Accordion title="What if the preview stops loading?">
+    Click the "Restart Metro" button. If that doesn't help, ask the AI to "restart the preview with cache reset."
+  </Accordion>
+</AccordionGroup>
+
+## Deployment
+
+<AccordionGroup>
+  <Accordion title="How do I publish to the App Store?">
+    Connect GitHub and Expo, then click Deploy and select iOS. Fastshot handles the build and submission to App Store Connect. See the [iOS deployment guide](/publishing/ios-deployment).
+  </Accordion>
+
+  <Accordion title="How do I publish to Google Play?">
+    Connect GitHub and Expo, then click Deploy and select Android. Download the APK and upload it to Google Play Console. See the [Android deployment guide](/publishing/android-deployment).
+  </Accordion>
+
+  <Accordion title="Do I need paid developer accounts?">
+    For iOS: yes, an Apple Developer Program membership ($99/year). For Android: yes, a Google Play Console account ($25 one-time fee). These are required by Apple and Google, not by Fastshot.
+  </Accordion>
+</AccordionGroup>
+
+## Integrations
+
+<AccordionGroup>
+  <Accordion title="Do I need Supabase?">
+    Only if your app needs user accounts, cloud storage, or a database. Without Supabase, data is stored locally on the device.
+  </Accordion>
+
+  <Accordion title="Can I add payments to my app?">
+    Yes. Fastshot supports in-app purchases and subscriptions via Adapty (built-in) or RevenueCat (optional). See the [RevenueCat guide](/integrations/revenuecat).
+  </Accordion>
+</AccordionGroup>
