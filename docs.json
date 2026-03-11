@@ -44,7 +44,7 @@
             "group": "Integrations",
             "pages": [
               "integrations/supabase-backend",
-              "integrations/revenuecat",
+              "integrations/monetization",
               "integrations/github-integration"
             ]
           },
