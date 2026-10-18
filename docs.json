@@ -52,7 +52,6 @@
             "group": "Publishing",
             "pages": [
               "publishing/app-publishing-overview",
-              "publishing/expo-connection",
               "publishing/android-deployment",
               "publishing/ios-deployment"
             ]
@@ -77,6 +76,12 @@
       ]
     }
   },
+  "redirects": [
+    {
+      "source": "/publishing/expo-connection",
+      "destination": "/publishing/app-publishing-overview"
+    }
+  ],
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"

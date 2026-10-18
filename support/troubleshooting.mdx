@@ -44,13 +44,13 @@ description: "Solutions for common issues"
 ## Build and deployment issues
 
 <AccordionGroup>
-  <Accordion title="Build fails on Expo">
-    Check the [Expo build dashboard](https://expo.dev) for detailed error logs. Common causes:
+  <Accordion title="Build fails">
+    The build card shows the reason. Ask the AI to read the build's logs and fix the problem. Common causes:
 
     - Missing or invalid app icon
     - Invalid `app.json` configuration
-    - Expired Expo access token — regenerate in your Expo account settings
-    - iOS: expired Apple Developer certificates
+    - Android: wrong keystore password or key alias
+    - iOS: expired Apple session or Apple Developer certificates
   </Accordion>
 
   <Accordion title="Can't connect GitHub">
@@ -59,10 +59,9 @@ description: "Solutions for common issues"
     - Try revoking and re-granting access in GitHub Settings > Applications
   </Accordion>
 
-  <Accordion title="Can't connect Expo">
-    - Verify your access token is valid at [expo.dev](https://expo.dev) under Account > Access Tokens
-    - Create a new token if the current one has expired
-    - Make sure you're pasting the full token without extra spaces
+  <Accordion title="Can't connect your Apple account">
+    - "This Apple ID isn't in the Apple Developer Program": join at [developer.apple.com/programs](https://developer.apple.com/programs/), then sign in again
+    - "Apple session expired": click **Re-authenticate** under **Apple Credentials** on the **iOS** tab
   </Accordion>
 </AccordionGroup>
 
