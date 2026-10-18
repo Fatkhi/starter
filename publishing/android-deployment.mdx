@@ -1,45 +1,66 @@
 ---
 title: "Android Deployment"
-description: "Build and publish your app to Google Play"
+description: "Get an APK for your phone, or publish on Google Play"
 ---
+
+Fastshot builds your Android app on its own build machines. You get two files:
+
+- **APK**: the file you install on an Android phone.
+- **AAB** (Android App Bundle): the file Google Play needs.
 
 ## Prerequisites
 
-- [Expo account connected](/publishing/expo-connection)
-- [GitHub account connected](/integrations/github-integration)
-- [Google Play Console](https://play.google.com/console) account ($25 one-time fee)
+- A Starter, Beginner or Pro plan
+- For Google Play only: a [Google Play Console](https://play.google.com/console) account ($25 one-time fee)
 
-## Building for Android
+## Build from the chat
 
-1. Click **Deploy** in the Fastshot editor
-2. Select **Android**
-3. Choose a build type:
-   - **Preview** — for internal testing
-   - **Production** — for Google Play submission
-4. Click **Start Build**
+Ask the AI, for example "build an APK" or "make an Android app file". A build card appears in the chat and shows each step. When the build is done, click **Download APK** or **Download AAB**.
 
-The build takes approximately 3-4 minutes. When complete, you'll get a download link for the APK file.
+## Build from the Publish view
 
-## Publishing to Google Play
+1. Click **Publish** in the project header. On a phone, open the menu and tap **Publish**.
+2. Choose the **Android** tab.
+3. Under **App Configuration**, check the **Package Name** and **App Name**, then click **Save Config**. The package name is your app's unique ID, like `com.yourcompany.appname`.
+4. Under **Android Builds**, click **Queue Build**.
+5. When the build shows **Completed**, click **Download APK** or **Download AAB**.
 
-1. **Download the APK** from the Expo build dashboard
-2. **Open Google Play Console** and create a new app
-3. **Upload the APK** to the appropriate track:
-   - Internal testing — for your team
-   - Closed testing — for invited testers
-   - Open testing — for public beta
-   - Production — for public release
-4. **Complete the store listing:**
-   - App name and description
-   - Screenshots (phone and tablet)
-   - Feature graphic
-   - Privacy policy URL
-   - Content rating questionnaire
-5. **Submit for review**
+A build takes several minutes. Without Google Play details, nothing is sent to Google Play: you get the files to download.
+
+## Install the APK on your phone
+
+1. Open the APK on your Android phone.
+2. If Android asks, allow installs from this source.
+3. Tap **Install**.
+
+## Publish on Google Play
+
+1. **Create your app** in [Google Play Console](https://play.google.com/console).
+2. **Upload the first build yourself.** Google Play doesn't let a build service upload an app's first build. Download the AAB and upload it in Play Console.
+3. **Let later builds upload for you.** Add a Google Play service account: a Google Cloud login that lets Fastshot upload builds. Paste its JSON key under **Google Play Service Account** on the **Android** tab and click **Save Credentials**.
+4. **Pick a track and build.** Next to **Queue Build**, choose **Internal**, **Alpha** (closed testing), **Beta** (open testing) or **Production**. The build goes to that track in Play Console.
+5. **Complete the store listing** in Play Console and submit it for review.
+
+The service account needs two things in Google:
+
+- The Google Play Android Developer API turned on in its Google Cloud project
+- An invitation in Play Console under **Users and permissions**, with release access
+
+Every build gets a higher version code than the one before. Google Play needs that for an update.
 
 <Tip>
-  Start with internal testing to verify everything works before submitting to production.
+  Start with the **Internal** track to check everything works before you release to everyone.
 </Tip>
+
+<Warning>
+  Google Play package names are permanent. If your app is already on Google Play, set **Package Name** to its exact package name before you build.
+</Warning>
+
+## Signing key
+
+Android apps must be signed with a key. Fastshot makes one on your first build, and uses it for all your projects. You'll see it under **Android Keystore**.
+
+If your app is already on Google Play with its own key, upload that `.jks` file under **Android Keystore** with its passwords and key alias. If a keystore is already there, click **Replace Keystore** first.
 
 ## Store listing tips
 
@@ -50,6 +71,9 @@ The build takes approximately 3-4 minutes. When complete, you'll get a download 
 
 ## Troubleshooting
 
-- **Build fails** — check the Expo build dashboard for error logs
-- **APK not installing** — ensure "Install from unknown sources" is enabled on the test device
+- **Build fails** — the build card shows the reason. Ask the AI to read the build's logs and fix the problem.
+- **Only a Download button, no AAB** — that build finished without an AAB. Build again.
+- **APK not installing** — allow installs from unknown sources for the app you opened the APK with.
+- **"Google Play has no app … that this account can reach yet"** — upload the first AAB in Play Console yourself. For an app already on Google Play, set **Package Name** to its package name.
+- **"Your service account has no access to this app"** — invite the service account's email in Play Console under **Users and permissions**, with release access.
 - **Missing app icon** — verify the app icon is set in [App Configuration](/working/app-config) before building

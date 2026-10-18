@@ -1,32 +1,34 @@
 ---
 title: "iOS Deployment"
-description: "Build and submit your app to the App Store"
+description: "Send your app to TestFlight and the App Store"
 ---
+
+Fastshot builds your iPhone app on its own Mac build machines. There are two ways to get it:
+
+- **TestFlight**: Fastshot uploads the build to App Store Connect, Apple's site for your App Store apps. From there you test it in TestFlight, Apple's app for trying an app before release, and submit it to the App Store.
+- **Sideload (unsigned IPA)**: you download the iPhone app file (the IPA) and install it yourself with a sideload tool. No Apple Developer account needed.
 
 ## Prerequisites
 
-- [Expo account connected](/publishing/expo-connection)
-- [GitHub account connected](/integrations/github-integration)
-- [Apple Developer Program](https://developer.apple.com/programs/) membership ($99/year)
+- A Starter, Beginner or Pro plan
+- For TestFlight and the App Store: an [Apple Developer Program](https://developer.apple.com/programs/) membership ($99/year)
 
-## Building for iOS
+## Build for TestFlight
 
-1. Click **Deploy** in the Fastshot editor
-2. Select **iOS**
-3. Confirm your Expo token and Apple Developer account are connected
-4. Click **Start Build**
+1. Click **Publish** in the project header. On a phone, open the menu and tap **Publish**. The **iOS** tab opens.
+2. **App Configuration** — enter a **Bundle Identifier**: your app's unique ID, in reverse-domain format (e.g. `com.yourcompany.appname`). Check the **App Name**, leave **Distribution Mode** on **TestFlight**, and click **Save Config**.
+3. **Apple Credentials** — connect your Apple Developer account in one of two ways:
+   - **Apple ID Login**: sign in with your Apple ID and password, then enter the 6-digit code sent to your devices. If you belong to several teams, pick one. Fastshot then creates the App Store Connect API key for you.
+   - **API Key (.p8)**: enter the **Key ID**, **Team ID** and **Issuer ID** of an App Store Connect API key, and choose its `.p8` file.
+4. **Provisioning** — click **Set Up Provisioning**. Apple needs a bundle ID, a distribution certificate, a provisioning profile and an App Store Connect app before it accepts a build. Fastshot creates them in your Apple account, so you don't have to.
+5. **iOS Builds** — leave **App Store** selected and click **Queue Build**.
 
-Expo handles the entire build process:
-
-- Pulls code from GitHub
-- Creates and manages signing certificates
-- Builds the IPA binary
-- Submits to App Store Connect
+The build uploads itself to App Store Connect. When it's done, the build card has a **TestFlight** button that opens your app's TestFlight page in App Store Connect.
 
 ## Publishing to the App Store
 
-1. **Open App Store Connect** at [appstoreconnect.apple.com](https://appstoreconnect.apple.com)
-2. **Find your build** — it should appear automatically after Expo submits it
+1. **Open App Store Connect** at [appstoreconnect.apple.com](https://appstoreconnect.apple.com) and go to **My Apps**
+2. **Find your build** — the one Fastshot uploaded
 3. **Complete the app listing:**
    - App name and subtitle
    - Description and keywords
@@ -37,9 +39,22 @@ Expo handles the entire build process:
    - App category
 4. **Submit for App Review**
 
+You can also ask the AI to help with your App Store listing.
+
 <Warning>
   Apple's review process typically takes 1-2 days. Make sure your app follows the [App Store Review Guidelines](https://developer.apple.com/app-store/review/guidelines/).
 </Warning>
+
+## Sideload an unsigned IPA
+
+1. Under **App Configuration**, set **Distribution Mode** to **Sideload (unsigned IPA)**. Your app needs a bundle identifier and an app name. Click **Save Config**.
+2. Under **iOS Builds**, click **Queue Build**.
+3. When the build is done, click **Install on device**, then **Download unsigned IPA**.
+4. Open the IPA in a sideload tool such as SideStore, AltStore or Sideloadly. The tool signs the app and installs it on your iPhone.
+
+<Note>
+  If you sign with a free Apple ID, renew the app's signature every 7 days.
+</Note>
 
 ## App Store requirements
 
@@ -51,7 +66,9 @@ Expo handles the entire build process:
 
 ## Troubleshooting
 
-- **Build fails** — check the Expo build dashboard for error logs; common issues include expired certificates or provisioning profiles
+- **Build fails** — the build card shows the reason. Ask the AI to read the build's logs and fix the problem.
+- **"Apple session expired"** — click **Re-authenticate** under **Apple Credentials** and sign in again.
+- **"Apple certificate limit (3) reached"** — click **Manage Certificates**, revoke a certificate you don't use, then set up provisioning again.
+- **"This Apple ID isn't in the Apple Developer Program"** — join at [developer.apple.com/programs](https://developer.apple.com/programs/), then sign in again.
 - **Rejected by App Review** — read the rejection reason carefully; common causes include crashes, broken features, or guideline violations
-- **Certificate issues** — Expo manages certificates automatically; if problems occur, regenerate the access token
 - **Missing metadata** — App Store Connect highlights required fields that are incomplete

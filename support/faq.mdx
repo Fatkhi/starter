@@ -67,11 +67,15 @@ description: "Frequently asked questions about Fastshot"
 
 <AccordionGroup>
   <Accordion title="How do I publish to the App Store?">
-    Connect GitHub and Expo, then click Deploy and select iOS. Fastshot handles the build and submission to App Store Connect. See the [iOS deployment guide](/publishing/ios-deployment).
+    Click **Publish** and open the **iOS** tab. Connect your Apple Developer account, then click **Queue Build**. Fastshot builds the app and uploads it to App Store Connect, where you submit it for review. See the [iOS deployment guide](/publishing/ios-deployment).
   </Accordion>
 
   <Accordion title="How do I publish to Google Play?">
-    Connect GitHub and Expo, then click Deploy and select Android. Download the APK and upload it to Google Play Console. See the [Android deployment guide](/publishing/android-deployment).
+    Click **Publish** and open the **Android** tab, or ask the AI to "build an APK". Download the AAB (the file Google Play needs) and upload it in Google Play Console. See the [Android deployment guide](/publishing/android-deployment).
+  </Accordion>
+
+  <Accordion title="Do I need an Expo account?">
+    No. Fastshot builds your app on its own build machines. You don't need an Expo account or access token.
   </Accordion>
 
   <Accordion title="Do I need paid developer accounts?">
